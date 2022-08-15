@@ -123,7 +123,7 @@ img {
 .nav-link:hover,
 .nav-link-current {
   color: var(--accent-text-cl);
-  }
+}
 
 .list-nav-contact {
   display: flex;
@@ -152,7 +152,7 @@ img {
 .nav-link-current::after {
   content: '';
   position: absolute;
-  bottom: 0px;
+  bottom: -1px;
   left: 0;
   display: block;
   width: 100%;
@@ -268,18 +268,15 @@ img {
 .work-list {
   --item: 3;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .work-text-img {
   position: absolute;
-  height: 70px;
+  min-height: 70px;
   width: 100%;
   bottom: 0;
   left: 0;
-  padding: 27px 82px;
+  padding: 27px;
   background-color: rgba(47, 48, 58, 0.8);
 }
 
@@ -290,7 +287,7 @@ img {
   line-height: calc(16 / 14);
   text-align: center;
   text-transform: uppercase;
-  
+
   color: var(--second-text-cl);
 }
 
@@ -404,6 +401,58 @@ img {
   color: var(--second-text-cl);
   margin-bottom: 20px;
 }
+
+.footer-subscribing {
+  position: relative;
+  margin-left: auto;
+}
+
+.subscribing-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.subscribing-input {
+  width: 358px;
+  padding: 15px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: calc(20 / 16);
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.btn-subscribing {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 10px;
+  padding-right: 28px;
+  padding-bottom: 10px;
+  padding-left: 29px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: calc(30 / 16);
+  letter-spacing: 0.06em;
+  color: var(--second-text-cl);
+  background-color: var(--accent-text-cl);
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  min-width: 200px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+.subscribing-icon {
+  position: absolute;
+  right: 28px;
+}
+
 /* портфоліо */
 
 .filter-list {
@@ -426,7 +475,8 @@ img {
   cursor: pointer;
   border: none;
   padding: 6px 22px;
-  transition: color var(--anime-basic), background-color var(--anime-basic), box-shadow var(--anime-basic);
+  transition: color var(--anime-basic), background-color var(--anime-basic),
+    box-shadow var(--anime-basic);
 }
 
 .buttons:hover,
@@ -444,7 +494,7 @@ img {
 .project-link {
   display: flex;
   flex-direction: column;
-  transition: box-shadow var(--anime-basic), trantransform var(--anime-basic);
+  transition: box-shadow var(--anime-basic);
 }
 
 .project-link:focus,
@@ -460,15 +510,14 @@ img {
 
 .overlay {
   position: absolute;
-   left: 0;
+  left: 0;
   bottom: 0;
   height: 100%;
-   width: 100%;
-      padding: 63px 24px;
+  width: 100%;
+  padding: 63px 24px;
   background-color: rgba(33, 150, 243, 0.9);
-transform: translateY(100%);
-transition: transform var(--anime-basic);
-
+  transform: translateY(100%);
+  transition: transform var(--anime-basic);
 }
 
 .text-overlay {
@@ -481,7 +530,7 @@ transition: transform var(--anime-basic);
 
 .project-link:hover .overlay,
 .project-link:focus .overlay {
-transform: translateY(0);
+  transform: translateY(0);
 }
 
 .card-text {
@@ -570,7 +619,8 @@ transform: translateY(0);
   left: 50%;
   width: 528px;
   height: 581px;
-  transform: translate(-50%, -50%) scale(1.25) rotate(360deg);
+  padding: 40px;
+  transform: translate(-50%, -50%) scale(1) rotate(360deg);
   transition: transform var(--anime-basic);
   background-color: var(--second-text-cl);
   border-radius: 4px;
@@ -590,8 +640,145 @@ transform: translateY(0);
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  transition: fill var(--anime-basic);
+}
+
+.modal-btn-icon:hover,
+.modal-btn-icon:focus {
+  fill: var(--accent-text-cl);
 }
 
 .backdrop.is-hidden .modal {
   transform: translate(-50%, -50%) scale(0.1) rotate(180deg);
 }
+
+.form-order {
+  text-align: center;
+}
+
+.form-order-title {
+  display: block;
+  margin-bottom: 12px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: calc(23 / 20);
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--title-text-cl);
+}
+
+.form-order-group {
+  margin-bottom: 20px;
+}
+
+.form-order-wrap {
+  position: relative;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.form-order-wrap:last-child {
+  margin-bottom: 0;
+}
+
+.form-order-text {
+  display: block;
+  text-align: left;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: calc(14 / 12);
+  letter-spacing: 0.01em;
+  margin-bottom: 4px;
+}
+
+.form-order-input {
+  width: 100%;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  padding: 11px;
+  padding-left: 40px;
+  cursor: pointer;
+  transition: border-color var(--anime-basic);
+}
+
+.form-order-input:hover + .form-order-icon,
+.form-order-input:focus-within + .form-order-icon {
+  fill: var(--accent-text-cl);
+}
+
+.form-order-comment:focus,
+.form-order-comment:hover,
+.form-order-input:hover,
+.form-order-input:focus-within {
+  border-color: var(--accent-text-cl);
+  outline: var(--accent-text-cl);
+}
+
+.form-order-comment {
+  width: 100%;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  padding: 12px 16px;
+  resize: none;
+  cursor: pointer;
+  transition: border-color var(--anime-basic);
+}
+
+.form-order-icon {
+  position: absolute;
+  bottom: 11px;
+  left: 12px;
+  transition: fill var(--anime-basic);
+}
+
+.form-order-agreement {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 30px;
+}
+
+.form-order-checkbox:checked + .form-order-agreement-icon .form-order-agreement-icon-uncheck {
+  opacity: 0;
+}
+
+.form-order-agreement-icon-check {
+  opacity: 0;
+}
+
+.form-order-checkbox:checked + .form-order-agreement-icon .form-order-agreement-icon-check {
+  opacity: 1;
+}
+
+.form-order-agreement-text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: calc(24 / 14);
+  letter-spacing: 0.03em;
+  user-select: none;
+  text-underline-position: under;
+}
+
+.form-order-agreement-link {
+  color: var(--accent-text-cl);
+}
+
+.form-order-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 55px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: calc(30 / 16);
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  color: var(--second-text-cl);
+  background: var(--accent-text-cl);
+  border: none;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+}
+
