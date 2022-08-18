@@ -633,6 +633,7 @@ img {
   fill: var(--accent-text-cl);
 }
 
+
 .backdrop.is-hidden .modal {
   transform: translate(-50%, -50%) scale(0.1) rotate(180deg);
 }
